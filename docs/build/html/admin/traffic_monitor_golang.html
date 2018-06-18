@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Traffic Monitor Administration &mdash; playdo 3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Traffic Router Administration" href="traffic_router.html" />
+    <link rel="prev" title="Traffic Monitor Administration (Legacy)" href="traffic_monitor.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> playdo
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/index.html">CDN Basics</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Traffic Control Overview</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Administrator’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="traffic_ops/installation.html">Traffic Ops - Installing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_ops/default_profiles.html">Traffic Ops - Default Profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_ops/migration_from_10_to_20.html">Traffic Ops - Migrating from 1.x to 2.x</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_ops/migration_from_20_to_22.html">Traffic Ops - Migrating from 2.0 to 2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_ops/configuration.html">Traffic Ops - Configuring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_ops/using.html">Traffic Ops - Using</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_ops/extensions.html">Managing Traffic Ops Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_portal/installation.html">Traffic Portal Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_portal/usingtrafficportal.html">Traffic Portal - Using</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_monitor.html">Traffic Monitor Administration (Legacy)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Traffic Monitor Administration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-traffic-monitor">Installing Traffic Monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-traffic-monitor">Configuring Traffic Monitor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-overview">Configuration Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting-and-log-files">Troubleshooting and log files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_router.html">Traffic Router Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_stats.html">Traffic Stats Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_server.html">Traffic Server Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="traffic_vault.html">Traffic Vault Administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick_howto/index.html">Quick How To Guides</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Developer’s Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">APIs</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">playdo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Administrator’s Guide</a> &raquo;</li>
+        
+      <li>Traffic Monitor Administration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/admin/traffic_monitor_golang.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="traffic-monitor-administration">
+<h1>Traffic Monitor Administration<a class="headerlink" href="#traffic-monitor-administration" title="Permalink to this headline">¶</a></h1>
+<ul class="simple" id="rl-tm-golang">
+<li>These instructions are for the Golang Traffic Monitor, for the legacy Java version, see <a class="reference internal" href="traffic_monitor.html#rl-tm-java"><span class="std std-ref">here</span></a>.</li>
+</ul>
+<div class="section" id="installing-traffic-monitor">
+<h2>Installing Traffic Monitor<a class="headerlink" href="#installing-traffic-monitor" title="Permalink to this headline">¶</a></h2>
+<p>The following are requirements to ensure an accurate set up:</p>
+<ul class="simple">
+<li>CentOS 6+</li>
+<li>8 vCPUs</li>
+<li>16GB RAM</li>
+<li>Successful install of Traffic Ops</li>
+<li>Administrative access to the Traffic Ops</li>
+<li>Physical address of the site</li>
+</ul>
+<ol class="arabic">
+<li><p class="first">Enter the Traffic Monitor server into Traffic Ops</p>
+</li>
+<li><p class="first">Make sure the FQDN of the Traffic Monitor is resolvable in DNS.</p>
+</li>
+<li><p class="first">Install Traffic Monitor: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">traffic_monitor</span></code></p>
+</li>
+<li><p class="first">Configure Traffic Monitor. See <a class="reference internal" href="#rl-tm-configure"><span class="std std-ref">here</span></a></p>
+</li>
+<li><p class="first">Start the service: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">traffic_monitor</span> <span class="pre">start</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Starting</span> <span class="n">traffic_monitor</span><span class="p">:</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verify Traffic Monitor is running by pointing your browser to port 80 on the Traffic Monitor host.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="configuring-traffic-monitor">
+<h2>Configuring Traffic Monitor<a class="headerlink" href="#configuring-traffic-monitor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="configuration-overview">
+<h3>Configuration Overview<a class="headerlink" href="#configuration-overview" title="Permalink to this headline">¶</a></h3>
+<p id="rl-tm-configure">Traffic Monitor is configured via two JSON configuration files, <code class="docutils literal notranslate"><span class="pre">traffic_ops.cfg</span></code> and <code class="docutils literal notranslate"><span class="pre">traffic_monitor.cfg</span></code>, by default located in the <code class="docutils literal notranslate"><span class="pre">conf</span></code> directory in the install location.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">traffic_ops.cfg</span></code> config contains Traffic Ops connection information. Specify the URL, username, and password for the instance of Traffic Ops for which this Traffic Monitor is a member.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">traffic_monitor.cfg</span></code> config contains log file locations, as well as detailed application configuration variables, such as processing flush times and initial poll intervals.</p>
+<p>Once started with the correct configuration, Traffic Monitor downloads its configuration from Traffic Ops and begins polling caches. Once every cache has been polled, health protocol state is available via RESTful JSON endpoints.</p>
+</div>
+</div>
+<div class="section" id="troubleshooting-and-log-files">
+<h2>Troubleshooting and log files<a class="headerlink" href="#troubleshooting-and-log-files" title="Permalink to this headline">¶</a></h2>
+<p>Traffic Monitor log files are in <code class="docutils literal notranslate"><span class="pre">/opt/traffic_monitor/var/log/</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="traffic_router.html" class="btn btn-neutral float-right" title="Traffic Router Administration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="traffic_monitor.html" class="btn btn-neutral" title="Traffic Monitor Administration (Legacy)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, jvd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

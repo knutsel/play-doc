@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API Overview &mdash; playdo 3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API Routes" href="routes.html" />
+    <link rel="prev" title="APIs" href="index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> playdo
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/index.html">CDN Basics</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Traffic Control Overview</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator’s Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Developer’s Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">APIs</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">API Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#response-structure">Response Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-api-endpoints">Using API Endpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-errors">API Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trafficops-native-client-libraries">TrafficOps Native Client Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="routes.html">API Routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v11/index.html">API 1.1 Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v12/index.html">API 1.2 Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="v13/index.html">API 1.3 Reference</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">playdo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">APIs</a> &raquo;</li>
+        
+      <li>API Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/traffic_ops_api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-overview">
+<h1>API Overview<a class="headerlink" href="#api-overview" title="Permalink to this headline">¶</a></h1>
+<p>The Traffic Ops API provides programmatic access to read and write CDN data providing authorized API consumers with the ability to monitor CDN performance and configure CDN settings and parameters.</p>
+<div class="section" id="response-structure">
+<h2>Response Structure<a class="headerlink" href="#response-structure" title="Permalink to this headline">¶</a></h2>
+<p>All successful responses have the following structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">JSON</span> <span class="nb">object</span> <span class="k">with</span> <span class="n">main</span> <span class="n">response</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To make the documentation easier to read, only the <code class="docutils literal notranslate"><span class="pre">&lt;JSON</span> <span class="pre">object</span> <span class="pre">with</span> <span class="pre">main</span> <span class="pre">response&gt;</span></code> is documented, even though the response and version fields are always present.</p>
+</div>
+<div class="section" id="using-api-endpoints">
+<h2>Using API Endpoints<a class="headerlink" href="#using-api-endpoints" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Authenticate with your Traffic Portal or Traffic Ops user account credentials.</li>
+<li>Upon successful user authentication, note the mojolicious cookie value in the response headers.</li>
+<li>Pass the mojolicious cookie value, along with any subsequent calls to an authenticated API endpoint.</li>
+</ol>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[jvd@laika ~]$ curl -H &quot;Accept: application/json&quot; http://localhost:3000/api/1.1/usage/asns.json
+{&quot;alerts&quot;:[{&quot;level&quot;:&quot;error&quot;,&quot;text&quot;:&quot;Unauthorized, please log in.&quot;}]}
+[jvd@laika ~]$
+[jvd@laika ~]$ curl -v -H &quot;Accept: application/json&quot; -v -X POST --data &#39;{ &quot;u&quot;:&quot;admin&quot;, &quot;p&quot;:&quot;secret_passwd&quot; }&#39; http://localhost:3000/api/1.1/user/login
+* Hostname was NOT found in DNS cache
+*   Trying ::1...
+* connect to ::1 port 3000 failed: Connection refused
+*   Trying 127.0.0.1...
+* Connected to localhost (127.0.0.1) port 3000 (#0)
+&gt; POST /api/1.1/user/login HTTP/1.1
+&gt; User-Agent: curl/7.37.1
+&gt; Host: localhost:3000
+&gt; Accept: application/json
+&gt; Content-Length: 32
+&gt; Content-Type: application/x-www-form-urlencoded
+&gt;
+* upload completely sent off: 32 out of 32 bytes
+&lt; HTTP/1.1 200 OK
+&lt; Connection: keep-alive
+&lt; Access-Control-Allow-Methods: POST,GET,OPTIONS,PUT,DELETE
+&lt; Access-Control-Allow-Origin: http://localhost:8080
+&lt; Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+&lt; Set-Cookie: mojolicious=eyJleHBpcmVzIjoxNDI5NDAyMjAxLCJhdXRoX2RhdGEiOiJhZG1pbiJ9--f990d03b7180b1ece97c3bb5ca69803cd6a79862; expires=Sun, 19 Apr 2015 00:10:01 GMT; path=/; HttpOnly
+&lt; Content-Type: application/json
+&lt; Date: Sat, 18 Apr 2015 20:10:01 GMT
+&lt; Access-Control-Allow-Credentials: true
+&lt; Content-Length: 81
+&lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+* Server Mojolicious (Perl) is not blacklisted
+&lt; Server: Mojolicious (Perl)
+&lt;
+* Connection #0 to host localhost left intact
+{&quot;alerts&quot;:[{&quot;level&quot;:&quot;success&quot;,&quot;text&quot;:&quot;Successfully logged in.&quot;}]}
+[jvd@laika ~]$
+
+[jvd@laika ~]$ curl -H&#39;Cookie: mojolicious=eyJleHBpcmVzIjoxNDI5NDAyMjAxLCJhdXRoX2RhdGEiOiJhZG1pbiJ9--f990d03b7180b1ece97c3bb5ca69803cd6a79862;&#39; -H &quot;Accept: application/json&quot; http://localhost:3000/api/1.1/asns.json
+{&quot;response&quot;:{&quot;asns&quot;:[{&quot;lastUpdated&quot;:&quot;2012-09-17 15:41:22&quot;, .. asn data deleted ..   ,}
+[jvd@laika ~]$
+</pre></div>
+</div>
+</div>
+<div class="section" id="api-errors">
+<h2>API Errors<a class="headerlink" href="#api-errors" title="Permalink to this headline">¶</a></h2>
+<p><strong>Response Properties</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="10%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">alerts</span></code></td>
+<td>array</td>
+<td>A collection of alert messages.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&gt;level</span></code></td>
+<td>string</td>
+<td>Success, info, warning or error.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&gt;text</span></code></td>
+<td>string</td>
+<td>Alert message.</td>
+</tr>
+</tbody>
+</table>
+<p>The 3 most common errors returned by Traffic Ops are:</p>
+<dl class="docutils">
+<dt>401 Unauthorized</dt>
+<dd><p class="first">When you don’t supply the right cookie, this is the response.</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>[jvd@laika ~]$ curl -v -H &quot;Accept: application/json&quot; http://localhost:3000/api/1.1/usage/asns.json
+* Hostname was NOT found in DNS cache
+*   Trying ::1...
+* connect to ::1 port 3000 failed: Connection refused
+*   Trying 127.0.0.1...
+* Connected to localhost (127.0.0.1) port 3000 (#0)
+&gt; GET /api/1.1/usage/asns.json HTTP/1.1
+&gt; User-Agent: curl/7.37.1
+&gt; Host: localhost:3000
+&gt; Accept: application/json
+&gt;
+&lt; HTTP/1.1 401 Unauthorized
+&lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+&lt; Content-Length: 84
+* Server Mojolicious (Perl) is not blacklisted
+&lt; Server: Mojolicious (Perl)
+&lt; Connection: keep-alive
+&lt; Access-Control-Allow-Methods: POST,GET,OPTIONS,PUT,DELETE
+&lt; Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+&lt; Access-Control-Allow-Origin: http://localhost:8080
+&lt; Date: Sat, 18 Apr 2015 20:36:12 GMT
+&lt; Content-Type: application/json
+&lt; Access-Control-Allow-Credentials: true
+&lt;
+* Connection #0 to host localhost left intact
+{&quot;alerts&quot;:[{&quot;level&quot;:&quot;error&quot;,&quot;text&quot;:&quot;Unauthorized, please log in.&quot;}]}
+[jvd@laika ~]$
+</pre></div>
+</div>
+</dd>
+<dt>404 Not Found</dt>
+<dd><p class="first">When the resource (path) is non existent Traffic Ops returns a 404:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>[jvd@laika ~]$ curl -v -H&#39;Cookie: mojolicious=eyJleHBpcmVzIjoxNDI5NDAyMjAxLCJhdXRoX2RhdGEiOiJhZG1pbiJ9--f990d03b7180b1ece97c3bb5ca69803cd6a79862;&#39; -H &quot;Accept: application/json&quot; http://localhost:3000/api/1.1/asnsjj.json
+* Hostname was NOT found in DNS cache
+*   Trying ::1...
+* connect to ::1 port 3000 failed: Connection refused
+*   Trying 127.0.0.1...
+* Connected to localhost (127.0.0.1) port 3000 (#0)
+&gt; GET /api/1.1/asnsjj.json HTTP/1.1
+&gt; User-Agent: curl/7.37.1
+&gt; Host: localhost:3000
+&gt; Cookie: mojolicious=eyJleHBpcmVzIjoxNDI5NDAyMjAxLCJhdXRoX2RhdGEiOiJhZG1pbiJ9--f990d03b7180b1ece97c3bb5ca69803cd6a79862;
+&gt; Accept: application/json
+&gt;
+&lt; HTTP/1.1 404 Not Found
+* Server Mojolicious (Perl) is not blacklisted
+&lt; Server: Mojolicious (Perl)
+&lt; Content-Length: 75
+&lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+&lt; Content-Type: application/json
+&lt; Date: Sat, 18 Apr 2015 20:37:43 GMT
+&lt; Access-Control-Allow-Credentials: true
+&lt; Set-Cookie: mojolicious=eyJleHBpcmVzIjoxNDI5NDAzODYzLCJhdXRoX2RhdGEiOiJhZG1pbiJ9--8a5a61b91473bc785d4073fe711de8d2c63f02dd; expires=Sun, 19 Apr 2015 00:37:43 GMT; path=/; HttpOnly
+&lt; Access-Control-Allow-Methods: POST,GET,OPTIONS,PUT,DELETE
+&lt; Connection: keep-alive
+&lt; Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+&lt; Access-Control-Allow-Origin: http://localhost:8080
+&lt;
+* Connection #0 to host localhost left intact
+{&quot;alerts&quot;:[{&quot;text&quot;:&quot;Resource not found.&quot;,&quot;level&quot;:&quot;error&quot;}]}
+[jvd@laika ~]$
+</pre></div>
+</div>
+</dd>
+<dt>500 Internal Server Error</dt>
+<dd><p class="first">When you are asking for a correct path, but the database doesn’t match, it returns a 500:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[jvd@laika ~]$ curl -v -H&#39;Cookie: mojolicious=eyJleHBpcmVzIjoxNDI5NDAyMjAxLCJhdXRoX2RhdGEiOiJhZG1pbiJ9--f990d03b7180b1ece97c3bb5ca69803cd6a79862;&#39; -H &quot;Accept: application/json&quot; http://localhost:3000/api/1.1/servers/hostname/jj/details.json
+* Hostname was NOT found in DNS cache
+*   Trying ::1...
+* connect to ::1 port 3000 failed: Connection refused
+*   Trying 127.0.0.1...
+* Connected to localhost (127.0.0.1) port 3000 (#0)
+&gt; GET /api/1.1/servers/hostname/jj/details.json HTTP/1.1
+&gt; User-Agent: curl/7.37.1
+&gt; Host: localhost:3000
+&gt; Cookie: mojolicious=eyJleHBpcmVzIjoxNDI5NDAyMjAxLCJhdXRoX2RhdGEiOiJhZG1pbiJ9--f990d03b7180b1ece97c3bb5ca69803cd6a79862;
+&gt; Accept: application/json
+&gt;
+&lt; HTTP/1.1 500 Internal Server Error
+* Server Mojolicious (Perl) is not blacklisted
+&lt; Server: Mojolicious (Perl)
+&lt; Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+&lt; Content-Length: 93
+&lt; Set-Cookie: mojolicious=eyJhdXRoX2RhdGEiOiJhZG1pbiIsImV4cGlyZXMiOjE0Mjk0MDQzMDZ9--1b08977e91f8f68b0ff5d5e5f6481c76ddfd0853; expires=Sun, 19 Apr 2015 00:45:06 GMT; path=/; HttpOnly
+&lt; Content-Type: application/json
+&lt; Date: Sat, 18 Apr 2015 20:45:06 GMT
+&lt; Access-Control-Allow-Credentials: true
+&lt; Access-Control-Allow-Methods: POST,GET,OPTIONS,PUT,DELETE
+&lt; Connection: keep-alive
+&lt; Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+&lt; Access-Control-Allow-Origin: http://localhost:8080
+&lt;
+* Connection #0 to host localhost left intact
+{&quot;alerts&quot;:[{&quot;level&quot;:&quot;error&quot;,&quot;text&quot;:&quot;An error occurred. Please contact your administrator.&quot;}]}
+[jvd@laika ~]$
+</pre></div>
+</div>
+<p class="last">The rest of the API documentation will only document the <code class="docutils literal notranslate"><span class="pre">200</span> <span class="pre">OK</span></code> case, where no errors have occured.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="trafficops-native-client-libraries">
+<h2>TrafficOps Native Client Libraries<a class="headerlink" href="#trafficops-native-client-libraries" title="Permalink to this headline">¶</a></h2>
+<p>TrafficOps client libraries are available in both Golang and Python.  You can read more about them at <a class="reference external" href="https://github.com/apache/incubator-trafficcontrol/tree/master/traffic_control/clients">https://github.com/apache/incubator-trafficcontrol/tree/master/traffic_control/clients</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="routes.html" class="btn btn-neutral float-right" title="API Routes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="APIs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, jvd.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
