@@ -1,3 +1,16 @@
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 # -*- coding: utf-8 -*-
 #
 # Configuration file for the Sphinx documentation builder.
@@ -19,7 +32,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'playdo'
+project = 'Traffic Control'
 copyright = '2018, jvd'
 author = 'jvd'
 
@@ -101,7 +114,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'playdodoc'
+htmlhelp_basename = 'traffic-control-cdn-doc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -128,7 +141,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'playdo.tex', 'playdo Documentation',
+    (master_doc, 'trafficcontrol.tex', 'trafficcontrol Documentation',
      'jvd', 'manual'),
 ]
 
@@ -138,7 +151,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'playdo', 'playdo Documentation',
+    (master_doc, 'trafficcontrol', 'trafficcontrol Documentation',
      [author], 1)
 ]
 
@@ -149,7 +162,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'playdo', 'playdo Documentation',
-     author, 'playdo', 'One line description of project.',
+    (master_doc, 'trafficcontrol', 'trafficcontrol Documentation',
+     author, 'trafficcontrol', 'Traffic Control is an Open Source implementation of a Content Delivery Network.',
      'Miscellaneous'),
 ]
